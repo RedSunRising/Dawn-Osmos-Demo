@@ -169,6 +169,8 @@ Blob.prototype.moveTo = function(xy) {
 */
 
 Blob.prototype.eject = function(mass, speed, degrees) {
+	// start here
+	
 	// This function should create new blob of mass mass, ejecting from this
 	// blob at an angle of degrees with speed speed
 
