@@ -170,7 +170,7 @@ Blob.prototype.moveTo = function(xy) {
 
 Blob.prototype.eject = function(mass, speed, degrees) {
 	// start here
-	
+
 	// This function should create new blob of mass mass, ejecting from this
 	// blob at an angle of degrees with speed speed
 
@@ -179,7 +179,11 @@ Blob.prototype.eject = function(mass, speed, degrees) {
 
 	// Suggested flow:
 	// - Create a new blob
+	var ejectBlob = new Blob();
 	// - Place it adjacent to this blob
+	ejectBlob.position = this.position;
+	ejectBlob.redrawBlob();
+
 	// - Place it adjacent to this blob, exiting at the right direction
 	// - Adjust the velocity of this blob appropriately
 };
