@@ -20,3 +20,33 @@ Array.prototype.equals = function (array) {
     // If we get to the end, we've checked all the elements
     return true;
 };
+
+function unitVector(vector) {
+    return vector.map(function(v) { return parseFloat(v)/norm(vector); });
+}
+
+function norm(vector) {
+    return Math.sqrt(vector.map(
+        function(v) { return v*v; }).reduce(
+            function(a, b) { return a + b; }));
+}
+
+function angleOf(vector) { return Math.atan(vector[1]/vector[0]); }
+
+function angleBetween(point1, point2) {
+    var angle = angleOf(
+        point1.map(
+            function(c, i) {
+                return c - point2[i];
+            }));
+
+    return angle;
+}
+
+function distance(point1, point2) {
+    return Math.sqrt(
+        point2.map(
+            function(c, i) { return c - point1[i]; }).map(
+                function(d) { return d*d; }).reduce(
+                    function(a, b) { return a + b; }));
+}
